@@ -1,0 +1,98 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww19820\viewh11840\viewkind0
+\deftab720
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural
+
+\f0\fs38 \cf0 \
+\pard\pardeftab720
+
+\f1\b\fs48 \cf2 \expnd0\expndtw0\kerning0
+JSON HipChatMessage implementation
+\fs72 \
+
+\f0\b0\fs38 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720
+
+\f1\b\fs40 \cf2 \expnd0\expndtw0\kerning0
+Description
+\f0\b0\fs38 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural
+\cf0 This is a implementation to take content from the user and display a JSON string containing information about its contents. Special content to look for includes:\
+\
+ 1. @mentions - A way to mention a user. Always starts with an '@' and ends when hitting a non-word character. ({\field{\*\fldinst{HYPERLINK "http://help.hipchat.com/knowledgebase/articles/64429-how-do-mentions-work-"}}{\fldrslt http://help.hipchat.com/knowledgebase/articles/64429-how-do-mentions-work-}})\
+\
+ 2. Emoticons - For this exercise, you only need to consider 'custom' emoticons which are ASCII strings, no longer than 15 characters, contained in parenthesis. You can assume that anything matching this format is an emoticon. ({\field{\*\fldinst{HYPERLINK "https://www.hipchat.com/emoticons"}}{\fldrslt https://www.hipchat.com/emoticons}})\
+\
+ 3. Links - Any URLs contained in the message, along with the page's title.\
+ For example, calling your function with the following inputs should result in the corresponding return values.\
+\pard\pardeftab720
+
+\f1\b\fs40 \cf2 \expnd0\expndtw0\kerning0
+\
+Compiling the project\
+\pard\pardeftab720
+
+\f0\b0\fs38 \cf2 \expnd0\expndtw0\kerning0
+Users could open and compile the project by opening \'93JSONHipChat.xcworkspace\'94 file in xCode.\
+\pard\pardeftab720
+\cf0 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720
+
+\f1\b\fs40 \cf2 \expnd0\expndtw0\kerning0
+Usage
+\fs56 \
+
+\f0\b0\fs38 The user input a message into text field, and then tap \'93Go\'94 button on the keyboard to see a JSON string containing information about its contents.\
+\
+
+\f1\b\fs40 Examples
+\f0\b0\fs38 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural
+\cf0  Input: "@chris you around?"\
+ Return (string):\
+ \{\
+   "mentions": [\
+     "chris"\
+   ]\
+ \}\
+\
+ Input: "Good morning! (megusta) (coffee)"\
+ Return (string):\
+ \{\
+   "emoticons": [\
+     "megusta",\
+     "coffee"\
+   ]\
+ \}\
+ \
+ Input: "Olympics are starting soon; http://www.nbcolympics.com"\
+ Return (string):\
+ \{\
+   "links": [\
+     \{\
+       "url": "http://www.nbcolympics.com",\
+       "title": "NBC Olympics | 2014 NBC Olympics in Sochi Russia"\
+     \}\
+   ]\
+ \}\
+ \
+ Input: "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016"\
+ Return (string):\
+ \{\
+   "mentions": [\
+     "bob",\
+     "john"\
+   ],\
+   "emoticons": [\
+     "success"\
+   ],\
+   "links": [\
+     \{\
+       "url": "https://twitter.com/jdorfman/status/430511497475670016",\
+       "title": "Twitter / jdorfman: nice @littlebigdetail from ..."\
+     \}\
+   ]\
+ \}\
+}

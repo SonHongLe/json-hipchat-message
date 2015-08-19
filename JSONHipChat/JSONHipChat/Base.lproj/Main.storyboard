@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hip Chat View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="HipChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Message:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6C5-X0-0Gm">
+                                <rect key="frame" x="16" y="78" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Drp-oA-2Ka">
+                                <rect key="frame" x="16" y="180" width="288" height="368"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="JSON:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjk-SL-TOO">
+                                <rect key="frame" x="16" y="156" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a message" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jYs-lX-5On">
+                                <rect key="frame" x="16" y="102" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="go"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="JSON HipChat Message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msm-dH-Pdu">
+                                <rect key="frame" x="53" y="40" width="215" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="wq2-rx-z6M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.396078431372549" green="0.84313725490196079" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="msm-dH-Pdu" secondAttribute="centerX" id="5Cn-uK-dXf"/>
+                            <constraint firstItem="wjk-SL-TOO" firstAttribute="leading" secondItem="jYs-lX-5On" secondAttribute="leading" id="Scy-CR-w29"/>
+                            <constraint firstItem="jYs-lX-5On" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="WQw-iD-Aqa"/>
+                            <constraint firstItem="wjk-SL-TOO" firstAttribute="leading" secondItem="Drp-oA-2Ka" secondAttribute="leading" id="Ylx-f2-z7y"/>
+                            <constraint firstAttribute="bottom" secondItem="Drp-oA-2Ka" secondAttribute="bottom" constant="20" symbolic="YES" id="dY7-ON-qjE"/>
+                            <constraint firstItem="jYs-lX-5On" firstAttribute="leading" secondItem="6C5-X0-0Gm" secondAttribute="leading" id="hlE-Br-lZB"/>
+                            <constraint firstItem="jYs-lX-5On" firstAttribute="top" secondItem="6C5-X0-0Gm" secondAttribute="bottom" constant="3" id="k71-X4-hb8"/>
+                            <constraint firstItem="wjk-SL-TOO" firstAttribute="top" secondItem="jYs-lX-5On" secondAttribute="bottom" constant="24" id="pxV-hN-T4h"/>
+                            <constraint firstItem="jYs-lX-5On" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="qEB-Na-Och"/>
+                            <constraint firstItem="jYs-lX-5On" firstAttribute="trailing" secondItem="Drp-oA-2Ka" secondAttribute="trailing" id="qwf-eP-kd4"/>
+                            <constraint firstItem="jYs-lX-5On" firstAttribute="centerX" secondItem="msm-dH-Pdu" secondAttribute="centerX" id="shr-6q-Mw2"/>
+                            <constraint firstAttribute="centerX" secondItem="msm-dH-Pdu" secondAttribute="centerX" id="ver-3k-Pb1"/>
+                            <constraint firstItem="Drp-oA-2Ka" firstAttribute="top" secondItem="wjk-SL-TOO" secondAttribute="bottom" constant="3" id="wFF-6f-SkA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="jsonTextView" destination="Drp-oA-2Ka" id="i6w-7X-NPE"/>
+                        <outlet property="messageTextField" destination="jYs-lX-5On" id="pro-Xm-Qpj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202" y="140"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
